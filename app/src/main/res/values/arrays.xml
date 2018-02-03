@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="ld_activityScreenTitles">
+        <item>Dashboard</item>
+        <item>My Account</item>
+        <item>My Products</item>
+        <item>Orders</item>
+        <item>Credits</item>
+        <item />
+        <item>Log Out</item>
+    </string-array>
+
+    <array name="ld_activityScreenIcons">
+        <item>@drawable/home</item>
+        <item>@drawable/users</item>
+        <item>@drawable/flyer</item>
+        <item>@drawable/basket</item>
+        <item>@drawable/currency</item>
+        <item>0</item>
+        <item>@drawable/logout</item>
+    </array>
+
+</resources>

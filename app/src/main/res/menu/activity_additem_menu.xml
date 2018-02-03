@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item android:title="Scan barcode"
+                app:showAsAction="ifRoom"
+                android:icon="@drawable/barcode"
+                android:id="@+id/scan_code"/>
+
+        <item android:id="@+id/done"
+            android:icon="@drawable/correct_signal"
+            android:title="Done"
+            app:showAsAction="ifRoom"
+
+            />
+</menu>

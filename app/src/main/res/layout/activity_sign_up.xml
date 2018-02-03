@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:paddingTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/fe_logo"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#fff"/>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/signup_id_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="UserID"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:layout_below="@id/profile_image">
+        <EditText
+            android:id="@+id/signup_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/signup_email_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:layout_below="@id/signup_id_hint">
+        <EditText
+            android:id="@+id/signup_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Full Name"
+        android:id="@+id/signup_fullname_hint"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:layout_below="@id/signup_email_hint">
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/signup_fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mobile"
+        android:id="@+id/signup_mobile_hint"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:layout_below="@id/signup_fullname_hint">
+        <EditText
+            android:inputType="number"
+            android:id="@+id/signup_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/signup_submit"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signup_mobile_hint"
+       android:layout_centerHorizontal="true"
+        android:text="SignUp"
+        android:background="@drawable/button"
+        android:paddingTop="15dp" />
+   </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
