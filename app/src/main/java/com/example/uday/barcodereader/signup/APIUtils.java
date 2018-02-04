@@ -7,7 +7,7 @@ package com.example.uday.barcodereader.signup;
 public class APIUtils {
     private APIUtils() {}
 
-    public static final String BASE_URL = "http://192.168.0.32:3000/";
+    public static final String BASE_URL = "http://192.168.0.34:3000/";
 
     public static APIService getAPIService() {
 

@@ -1,6 +1,8 @@
 package com.example.uday.barcodereader;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -13,9 +15,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 
 import com.example.uday.barcodereader.fragment.CenteredTextFragment;
+import com.example.uday.barcodereader.mainactivityfragments.ProductsFragment;
 import com.example.uday.barcodereader.menu.DrawerAdapter;
 import com.example.uday.barcodereader.menu.DrawerItem;
 import com.example.uday.barcodereader.menu.SimpleItem;
@@ -77,13 +81,18 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         list.setAdapter(adapter);
 
         adapter.setSelected(POS_DASHBOARD);
+
     }
 
     @Override
     public void onItemSelected(int position) {
         if (position == POS_LOGOUT) {
             finish();
+
         }
+        if (position == MY_PRODUCT)
+            showFragment(new ProductsFragment());
+
         slidingRootNav.closeMenu();
 
     }
@@ -92,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         getFragmentManager().beginTransaction()
                 .replace(R.id.container, fragment)
                 .commit();
+        Log.e("Fragment load", "fragment loaded");
     }
 
     private DrawerItem createItemFor(int position) {

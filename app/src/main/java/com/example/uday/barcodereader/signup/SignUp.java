@@ -2,6 +2,7 @@ package com.example.uday.barcodereader.signup;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
@@ -54,8 +55,8 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String id = editText_id.getText().toString();
-                String name = editText_name.getText().toString();
-                String mobile = editText_mobile.getText().toString();
+                final String name = editText_name.getText().toString();
+                final String mobile = editText_mobile.getText().toString();
 
 
                 String email = editText_email.getText().toString();
@@ -69,6 +70,11 @@ public class SignUp extends AppCompatActivity {
 
                             Toasty.success(SignUp.this,"Sign Up sucessfull", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(SignUp.this, AddItemActivity.class));
+                            SharedPreferences pref = getApplicationContext().getSharedPreferences("Logged_in_user", 0); // 0 - for private mode
+                            SharedPreferences.Editor editor = pref.edit();
+                            editor.putString("vname", name); // Storing string
+                            editor.putString("vmobile",mobile);
+                            editor.commit();
                         }
                     }
 
